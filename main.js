@@ -15,7 +15,7 @@ function draw(){
    
     background('#064b63');
 document.getElementById("font_reader").innerHTML=" Font size of the text will be = "+difference+"px";
-textSize(difference)
+textSize(difference);
 fill('#91cfe6');
 text('Daiwik',50,400);
 }
@@ -30,7 +30,7 @@ function gotPoses(results){
         leftWristX=results[0].pose.leftWrist.x;
         rightWristX=results[0].pose.rightWrist.x;
         difference=floor(rightWristX-leftWristX);
-
+difference=Math.abs(difference);
         console.log("leftWristX= "+leftWristX+"rightWristX= "+rightWristX+"difference= "+difference);
     }
 }
